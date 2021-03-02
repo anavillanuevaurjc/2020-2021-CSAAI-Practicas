@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(190, 190, 151);
+}
+h4{
+    background-color: crimson;
+}
+p{
+    color: rgb(255, 255, 255);
+}
+#seccion3{
+    background-color: cyan;
+}
+ul{
+    background-color: darkorchid;
+}
+#seccion5{
+    background-color: deeppink;
+    margin: 10px;
+    padding: 0px;
+    border: solid;
+    border-color: gold;
+}
