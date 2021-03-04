@@ -1,9 +1,18 @@
 body{
+    /* Implica que todo el cuerpo tendra el fondo, el color y la 
+    tipografia que indico en caso de que no haya otro mandato
+    más especifico. */
     background-color:burlywood;
     font-family: Verdana, Geneva, Tahoma, sans-serif;/* hola*/
-    
+    color:black;
 }
 #seccion1{
+    /* Primera seccion:
+    color de fondo
+    margen
+    padding
+    borde
+    color borde */
     background-color:cornsilk;
     margin: 10px;
     padding: 10px; /* Relleno */
@@ -12,6 +21,13 @@ body{
 
 }
 #seccion2{
+        /* Segunda seccion:
+    color de fondo
+    margen
+    padding
+    borde
+    color borde 
+    anchura máxima del contenedor*/
     background-color:bisque;
     margin: 10px;
     padding: 10px; /* Relleno */
@@ -21,17 +37,40 @@ body{
 
 }
 #seccion3{
+        /* Primera seccion:
+    color de fondo
+    margen
+    padding
+    borde
+    color borde
+    anchura máxima del contenedor
+    posicion -> relative
+    float -> left
+    estos dos ultimos colocan el contenedor en el lado izquiero, es decir,
+    lo mas cercano posible al bloque anterio*/
     background-color:beige;
     margin: 10px;
     padding: 10px; /* Relleno */
     border:solid;
     border-color: black;
     max-width: 400px;
+    position: relative;
+    float: left;
 }
 #seccion4{
+            /* Primera seccion:
+    color de fondo
+    margen
+    padding
+    borde
+    color borde
+    anchura máxima del contenedor
+    posicion -> relative
+    float -> left
+    estos dos ultimos colocan el contenedor en el lado izquiero, es decir,
+    lo mas cercano posible al bloque anterior*/
     background-color:cornsilk;
     margin: 10px;
-    margin-top: 0px;
     margin-bottom: 0px;
     margin-left: 10px;
     margin-right: 0px;
@@ -39,27 +78,47 @@ body{
     padding: 10px; /* Relleno */
     border:solid;
     border-color: black;
+    position: relative;
+    float: left;
 }
 #seccion5{
+            /* Primera seccion:
+    color de fondo
+    margen
+    padding
+    borde
+    color borde
+    anchura máxima del contenedor
+    posicion -> relative
+    float -> right
+    estos dos ultimos colocan el contenedor en el lado derecho, es decir,
+    lo mas lejano posible al bloque anterior*/
     background-color:bisque;
     margin: 10px;
     padding: 10px; /* Relleno */
     border:solid;
     border-color: black;
     max-width: 400px;
+    position: relative;
+    float: right;
+
+
 }
 
 .imagenes{
-    
+    /* De este modo muevo hacia la izquierda las imagenes 
+    correspondientes a cada Dojo */
     margin-right: 00px;
     padding: 10px; /* Relleno */
     border:solid;
     border-color: black;
 }
 #imagenprincipal{
-    /*! margin: 10px; */
-    /*! margin-top: 10px; */
-    /*! padding: 10px; */ /* Relleno */
+    /* Borde
+    Color del borde
+    Pongo margen a la derecha para situar la imagen justo
+    encima de la informacion */
     border:solid;
     border-color: #a57400;
+    margin-right: 75px;
 }
