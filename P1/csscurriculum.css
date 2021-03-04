@@ -1,22 +1,65 @@
 body{
-    background-color: rgb(190, 190, 151);
+    background-color:burlywood;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;/* hola*/
+    
 }
-h4{
-    background-color: crimson;
+#seccion1{
+    background-color:cornsilk;
+    margin: 10px;
+    padding: 10px; /* Relleno */
+    border:solid;
+    border-color: black;
+
 }
-p{
-    color: rgb(255, 255, 255);
+#seccion2{
+    background-color:bisque;
+    margin: 10px;
+    padding: 10px; /* Relleno */
+    border:solid;
+    border-color: black;
+    max-width: 400px;
+
 }
 #seccion3{
-    background-color: cyan;
+    background-color:beige;
+    margin: 10px;
+    padding: 10px; /* Relleno */
+    border:solid;
+    border-color: black;
+    max-width: 400px;
 }
-ul{
-    background-color: darkorchid;
+#seccion4{
+    background-color:cornsilk;
+    margin: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    margin-right: 0px;
+    max-width: 400px;
+    padding: 10px; /* Relleno */
+    border:solid;
+    border-color: black;
 }
 #seccion5{
-    background-color: deeppink;
+    background-color:bisque;
     margin: 10px;
-    padding: 0px;
-    border: solid;
-    border-color: gold;
+    padding: 10px; /* Relleno */
+    border:solid;
+    border-color: black;
+    max-width: 400px;
+}
+
+.imagenes{
+    
+    margin-right: 00px;
+    padding: 10px; /* Relleno */
+    border:solid;
+    border-color: black;
+}
+#imagenprincipal{
+    /*! margin: 10px; */
+    /*! margin-top: 10px; */
+    /*! padding: 10px; */ /* Relleno */
+    border:solid;
+    border-color: #a57400;
 }
