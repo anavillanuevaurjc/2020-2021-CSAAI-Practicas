@@ -2,6 +2,7 @@ body{
     /* Implica que todo el cuerpo tendra el fondo, el color y la 
     tipografia que indico en caso de que no haya otro mandato
     más especifico. */
+    background:-moz-linear-gradient(right,burlywood, cornsilk);
     background-color:burlywood;
     font-family: Verdana, Geneva, Tahoma, sans-serif;/* hola*/
     color:black;
@@ -13,7 +14,8 @@ body{
     padding
     borde
     color borde */
-    background-color:cornsilk;
+    /* background-color:cornsilk; */
+    background:-moz-linear-gradient(left,burlywood, cornsilk);
     margin: 10px;
     padding: 10px; /* Relleno */
     border:solid;
@@ -36,6 +38,7 @@ body{
     max-width: 400px;
 
 }
+
 #seccion3{
         /* Primera seccion:
     color de fondo
@@ -72,10 +75,10 @@ body{
     background-color:cornsilk;
     margin: 10px;
     margin-bottom: 0px;
-    margin-left: 10px;
+    margin-left: 100px;
     margin-right: 0px;
     max-width: 400px;
-    padding: 10px; /* Relleno */
+    padding: 19px; /* Relleno */
     border:solid;
     border-color: black;
     position: relative;
@@ -112,6 +115,8 @@ body{
     padding: 10px; /* Relleno */
     border:solid;
     border-color: black;
+    font-style: italic;
+    }
 }
 #imagenprincipal{
     /* Borde
@@ -121,4 +126,11 @@ body{
     border:solid;
     border-color: #a57400;
     margin-right: 75px;
+}
+h3{
+ 
+    text-decoration: underline;
+
+    }
+
 }

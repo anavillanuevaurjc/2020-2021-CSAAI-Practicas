@@ -1,0 +1,95 @@
+body{
+    color:chartreuse
+}
+
+#contendor{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.marco{
+    border: dotted;
+    margin: 40px;
+    padding: 20px;
+    border-color: blue;
+
+}
+h1{
+    color:pink;
+    background-color: purple;
+    text-transform: uppercase; /* mayusculas */
+    text-shadow: yellow; /* sombreado */
+}
+p{
+    letter-spacing: 0.7px; /* espacio letras */
+    word-spacing: 12px; /* espacio entre palabras */
+}
+p::first-letter{ /* primera letra parrafo anterior */
+    color:brown;
+    font-size: 250%; /* tamaño fuente */
+}
+
+#menu{
+    margin: 5px 20px; /* Margen superior margen lateral */
+    padding: 5px 15px; /* padding forma */
+    height: 20px;
+    border:3px solid;
+    border-color: blue;
+    border-radius: 20px; /* borde redondeado */
+    background:-moz-linear-gradient(left,pink,blue);/* degradado gradiente color desde la izquiera*/
+}
+#menu ul{ /* Dentro de menu hay ul que modificar */
+    text-align: center;
+}
+
+#menu ul li{ /* Dentro de menu hay ul que modificar */
+    display: inline; /* alinear elemntos en linea*/
+    font-size: 20px; /* tamaño fuente */
+}
+ul a{ /* Dentro de menu hay ul que modificar */
+    margin: 55px;
+}
+a{ /* ataca directamente a  */
+    text-decoration:none;
+
+}
+a:link, a:active, a:visited{ /* estados del link */
+    color:darkmagenta;
+}
+
+#menu ul li a:hover{ /* actuan al posar raton sobre link */
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+    color:orange;
+}
+
+.mayuscula{
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+#enlaces{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 26px;
+    color:orangered;
+    text-align:right;
+}
+#enlaces a:hover{
+    color:red;
+    font-weight: bold; /* negrita */
+    font-style: italic; /* cursiva */
+}
+
+
+
+
+
+
+
+
+
+
+
