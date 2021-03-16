@@ -94,7 +94,7 @@ h4{
 .colm{
     color:rgb(100, 5, 5);
     border-bottom-color:rgb(100, 5, 5);
-    border-top-color: rgba(165, 42, 42, 0.562);
+    border-top-color: rgb(165, 42, 42);
 }
 
 .miya{
@@ -105,11 +105,11 @@ h4{
 
 .contacto{
     
-    color:rgba(139, 36, 88, 0.863); 
+    color:rgb(139, 36, 87); 
     text-align: center;
     border:4px;
     border-style:dashed;
-    border-color: rgba(162, 22, 197, 0.733);
+    border-color: rgb(162, 22, 197);
     padding:15px;
     margin:0px;
     margin-left: 15%;
@@ -117,7 +117,7 @@ h4{
 }
 
 .sobre{
-    color:rgba(22, 197, 183, 0.733);
+    color:rgb(22, 197, 183);
     text-align: center;
     border:solid;
     border-color: green;
