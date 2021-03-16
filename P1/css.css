@@ -1,0 +1,133 @@
+body{
+    background-color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    border-color: red;
+
+}
+h1{
+    color: black;
+    text-align: left;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: linear-gradient(rgb(163, 25, 1), rgb(163, 163, 1));
+    /* clip informático */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#imagenprincipal{
+    border:solid;
+    border-top-color: rgb(0, 0, 104);
+    border-right-color: rgb(0, 0, 0);
+    border-right-width: 650px;
+}
+
+h2{
+    
+    text-align: left;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+     /* standard gradient background */
+    background: linear-gradient(rgb(163, 163, 1), rgb(136, 39, 1));
+ /* clip informático */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h3{
+    color:rgb(255, 255, 255);
+    letter-spacing: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration-line: overline;
+    text-align: center;
+
+}
+
+.titulo1{
+    text-align: left;
+    /*solo es necesario indicar alineamiento texto, ya que
+    el resto lo coge de h3 */
+}
+.academic{
+    color: yellowgreen;
+    text-align: center;
+    border:dotted;
+    border-color: red;
+    border-bottom-color: green;
+    border-radius: 20px;
+    padding: 10px;
+    max-width: 200px;
+}
+
+.years{
+
+    color:white;
+    border:3px solid;
+    border-color: yellow;
+    border-width: 10px;
+    border-style: double;
+    border-radius: 100px;
+    margin:10px;
+    padding: 10px;
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;   
+
+}
+
+h4{
+    color:wheat;
+    text-align: center;
+    border-style:dotted;
+    padding: 10px;
+    margin:0px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.cobr{
+    color:rgb(165, 32, 32);
+    border-bottom-color: rgb(165, 32, 32);
+    border-top-color: rgb(182, 182, 12);
+}
+
+.colm{
+    color:rgb(100, 5, 5);
+    border-bottom-color:rgb(100, 5, 5);
+    border-top-color: rgba(165, 42, 42, 0.562);
+}
+
+.miya{
+    color:orange;
+    border-bottom-color:orange;
+    border-top-color: green;
+}
+
+.contacto{
+    
+    color:rgba(139, 36, 88, 0.863); 
+    text-align: center;
+    border:4px;
+    border-style:dashed;
+    border-color: rgba(162, 22, 197, 0.733);
+    padding:15px;
+    margin:0px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.sobre{
+    color:rgba(22, 197, 183, 0.733);
+    text-align: center;
+    border:solid;
+    border-color: green;
+    border-style: dashed;
+    border-left: double;
+    padding: 20px;
+
+}
+
+
+
+
+
