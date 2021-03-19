@@ -1,9 +1,20 @@
+body{
+    background-color: black;
+}
+
 .calculadora{
     display: block;  
     margin:0 auto;
-    background-color: blueviolet;
+    border: solid;
+    border:double;
+    border-right-color: rgb(255, 34, 170);
+    border-left-color: rgb(41, 223, 255);
+    border-bottom-color: rgb(41, 223, 255);
+    border-top-color: rgb(255, 34, 170);
+    border-width: 10px;
+    background-color: black;
     padding: 20px;
-    width: 350px;
+    width: 358px;
     height: 580px;
     border-radius: 25px;
 }
@@ -13,6 +24,14 @@
     width: 70px;
     height: 70px;
     font-size: 25px;
+    background-color: black;
+    color:white;
+    border:double;
+    border-bottom-color: rgb(255, 34, 170);
+    border-top-color: rgb(41, 223, 255);
+    border-left-color: rgb(255, 34, 170);
+    border-right-color: rgb(41, 223, 255);
+    border-width: 5px;
 }
 
 /* Primera fila con 4 columnas */
@@ -20,11 +39,35 @@
     display: block;
     text-align: center;
     font-size: 40px;
+    color:white;
     margin-bottom: 50px;
     width: 300px;
     height: 100px;
     line-height: 100px ; /* texto altura tamaño */
-    background-color: white;
+    background-color: black;
     border-radius: 25px;
     overflow-y: scroll; /* muchos números visualizacion de scroll */
+    border:dotted;
+    border-top-color:grey;
+    border-bottom-color: grey;
+    border-left-color: gainsboro;
+    border-right-color: gainsboro;
+    border-width: 3px;
 }
+
+#nombre{
+    color:gainsboro;
+    text-align: right;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    
+}
+#nombre2{
+    color:grey;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+
+    
+}
+
