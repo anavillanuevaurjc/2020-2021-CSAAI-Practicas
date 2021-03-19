@@ -6,29 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
     <link rel="stylesheet" href="css.css">
+    <script src ="codigo.js" defer></script>
 </head>
-<body>
-    <!-- Botones obligatorios -->
-    <div class = "botob">
-    <button class = "numero">0</button>
-    <button class = "numero">1</button>
-    <button class = "numero">2</button>
-    <button class = "numero">3</button>
-    <button class = "numero">4</button>
-    <button class = "numero">5</button>
-    <button class = "numero">6</button>
-    <button class = "numero">7</button>
-    <button class = "numero">8</button>
-    <button class = "numero">9</button>
-    <button class = "numero">+</button>
-    <button class = "numero">-</button>
-    </div>
-    <div class = "botob">
-    <button class = "operacion">x</button>
-    <button class = "operacion">/</button>
-    <button class = "operacion">=</button>
-    <button class = "operacion">AC</button>
-    <button class = "operacion">DEL</button>
-    </div>
+<body onload="init();">
+   <table class = "calculadora">
+       <tr>
+           <td colspan="4"> <!-- celda que ocupa 4 columnas -->
+            <span id="resultado"></span> <!-- para hacer referencia en js -->
+           </td>
+       </tr> <!-- Fila -->
+       <tr>
+           <td><button id="borrardig">DEL</button></td>
+        </tr>
+       <tr>
+           <td><button id="siete">7</button></td> <!-- celda segunda fila -->
+           <td><button id="ocho">8</button></td>
+           <td><button id="nueve">9</button></td>
+           <td><button id="division">%</button></td>
+       </tr>
+       <tr>
+           <td><button id="cuatro">4</button></td>
+           <td><button id="cinco">5</button></td>
+           <td><button id="seis">6</button></td>
+           <td><button id="multiplicacion">x</button></td>
+       </tr>
+       <tr>
+            <td><button id="uno">1</button></td>
+            <td><button id="dos">2</button></td>
+            <td><button id="tres">3</button></td>
+            <td><button id="resta">-</button></td>
+       </tr>
+       <tr>
+            <td><button id="igual">=</button></td>
+            <td><button id="reset">AC</button></td>
+            <td><button id="cero">0</button></td>
+            <td><button id="suma">+</button></td>
+       </tr>
+
+   </table>
 </body>
 </html>

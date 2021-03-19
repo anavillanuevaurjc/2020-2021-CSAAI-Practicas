@@ -1,21 +1,30 @@
-body{
+.calculadora{
+    display: block;  
+    margin:0 auto;
+    background-color: blueviolet;
+    padding: 20px;
+    width: 350px;
+    height: 580px;
+    border-radius: 25px;
+}
+/* todo dentro calculadora + td y sea boton */
+.calculadora td button{
+    display: block;
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+}
+
+/* Primera fila con 4 columnas */
+#resultado{
+    display: block;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    width: 300px;
+    height: 100px;
+    line-height: 100px ; /* texto altura tamaño */
     background-color: white;
-}
-
-.botob{
-    color:black;
-    border:solid;
-    border-color: slategrey;
-    border-style: double;
-    font-size: 30px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-}
-
-.numero{
-    
-}
-
-.operacion{
-    
+    border-radius: 25px;
+    overflow-y: scroll; /* muchos números visualizacion de scroll */
 }
