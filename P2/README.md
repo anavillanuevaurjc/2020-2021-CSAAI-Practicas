@@ -24,6 +24,7 @@ Acciones complementaria
 Uso
     Expresiones válidas
         Dígitos + operando + dígitos
-    Esta calculadora solo permite el uso de expresiones correctas y de una en una,
-    es decir, primero se realizará una operación y tras haber obtenido el resultado se realizará la siguiente.
+        Solo posible operaciones entre dos dígitos 
+        Tras finalizar una operación será posible realizar la siguiente
+
     
