@@ -1,0 +1,15 @@
+/* Estilo del canvas
+  Lo bordeamos con una línea negra y le damos fondo
+  azul para distinguirlo
+*/
+
+/* Debido a que en el html le hemos otorgado un id ahora
+podemos modificarlo con css y verlo de forma distintiva */
+
+canvas {
+    background-color: pink; /* color fondo */
+    border-style: solid; /* fondo solido */
+    border-width: 1px; /* anchura del borde */
+    border-color: yellow; /* color borde */
+    border-radius: 5px; /* redondeado del borde */
+  }
