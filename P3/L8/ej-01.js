@@ -100,26 +100,6 @@ ctx.beginPath();
 ctx.closePath();
 
 
-/* Si deseamos dibujar figuras geometricas se ha de realizar
-entre beginPath - closePath */
-
-ctx.beginPath();
-  //-- Definir un rectangulo de dimensiones 100x50,
-  //-- cuya esquina superior izquierda está en (5,5)
-  ctx.rect(150,250, 20, 10); /* RAQUETA */
-
-
-  /* ctx.rect(x,y, anchura, altura); */
-
-  //-- Color de relleno del rectángulo
-  ctx.fillStyle = 'green';
-
-  //-- Mostrar el relleno
-  ctx.fill();
-
-  //-- Mostrar el trazo del rectángulo
-  ctx.stroke();
-ctx.closePath();
 
 
 ctx.beginPath();
