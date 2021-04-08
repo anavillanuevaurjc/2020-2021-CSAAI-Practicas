@@ -3,8 +3,8 @@ console.log("Ejecutando JS...");
 const canvas = document.getElementById("canvas");
 
 //-- Definir el tamaño del canvas
-canvas.width = 300; 
-canvas.height = 100; 
+canvas.width = 300;
+canvas.height = 100;
 
 //-- Obtener el contexto del canvas
 const ctx = canvas.getContext("2d");
@@ -13,8 +13,9 @@ const ctx = canvas.getContext("2d");
 let x = 0;
 let y = 10;
 
-//-- Velocidad horizontal del objeto
+//-- Velocidades del objeto
 let velx = 3;
+let vely = 1;
 
 //-- Funcion principal de animacion
 function update() 
@@ -24,14 +25,19 @@ function update()
   //-- 1) Actualizar posicion del  elemento
   //-- (física del movimiento rectilineo uniforme)
 
-   //-- Condicion de rebote en extremos del canvas
+   //-- Condicion de rebote en extremos verticales del canvas
    if (x < 0 || x >= (canvas.width - 20) ) {
     velx = -velx;
-  } /* si x < 0 o x >= (anchura del canvas - 20) cambiar
-  sentido */
+  }
+
+  //-- Condición de rebote en extremos horizontales del canvas
+  if (y <= 0 || y > 80) {
+    vely = -vely;
+  }
 
   //-- Actualizar la posición
   x = x + velx;
+  y = y + vely;
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
