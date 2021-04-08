@@ -114,18 +114,22 @@ start.onclick = () => {
 /* No se donde implementar para que funcione */
 
 izq.onclick = () => {
-  console.log("Click!");
-  xr = xr - 1;
-}
-
+    console.log("Click!");
+    xr = xr - 1;
+      }
 dch.onclick = () => {
-  console.log("Click!");
-  xr = xr + 1;
-}
+    console.log("Click!");
+    xr = xr + 1;
+      }
+
+/* No se como indicar que bajo, por tanto, no posible */
+
+
+
+
 
 
 
   
-
 
 
