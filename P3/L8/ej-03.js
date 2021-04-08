@@ -135,13 +135,20 @@ function update()
     velx = -velx;
   } /* si x < 0 o x >= (anchura del canvas - 20) cambiar
   sentido */
-  if (y < 0 || y >= (canvas.height - 20) ) {
+  if (y < 0) {
     vely = -vely;
   }
 
+  if (y >= (canvas.height - 20) ) {
+    /* ventana emergente informando de que ha perdido */
+    /* ¿posibilidad de darle a start todas las veces deseadas */
+  }
+  
+
+
   //-- Actualizar la posición
   x = x + velx;
-  y = y + vely;
+  y = y - vely; /* de este modo empieza hacia arriba */
 
   //-- 2) Borrar el canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -158,9 +165,10 @@ function update()
 /* update(); */
 
 //-- Pulsacion del boton start
-start.onclick = () => {
-    console.log("Click sobre el párrafo...")
-  }
+
+start.onclick = update;
+
+  
   
 
 
