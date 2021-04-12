@@ -1,9 +1,10 @@
-console.log("Ejecutando js")
+console.log("Ejecutando js...")
 
+//-- Leer el párrafo identificado como test
 const test = document.getElementById('test')
 
-/* Propia asignacion del manejador */
-
-test.onclick = function(){
-    console.log("click en el párrafo")
+//-- Configurar el manejador para el evento de
+//-- pulsación de botón
+test.onclick = function () {
+  console.log("Click sobre el párrafo...")
 }

@@ -1,9 +1,11 @@
-/* Deseamos identificar elemento con
-identificador denominado test */
+//-- Tenemos acceso al documento html mediante  
+//-- el objeto document
 
-const test = document.getElementById('test')
+//-- Leer el párrafo identificado como test
+const test = document.getElementById('test') /* Localizar 
+mediante identificador */
 
-/* Mostrar por la consola el contenido del párrafo */
-
+//-- Mostrar en la consola el contenido del párrafo
+//-- (es la propiedad innerHTML)
 console.log("Párrafo test leido. Dice:")
-console.log(test.innerHTML) /* accede a la informacion */
+console.log(test.innerHTML) /* imprimir texto  */

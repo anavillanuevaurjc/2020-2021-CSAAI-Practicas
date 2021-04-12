@@ -1,16 +1,17 @@
-/* Creamos funcion que cuando corra
-hara que en la consola aparezca la frase */
+//-- Manejador del evento click sobre el párrafo test
+//-- Cada vez aue se hace click en el se invoca a esta funcion
 function manejador_parrafo()
 {
-    console.log("Click sobre párrafo")
+  console.log("Click sobre el párrafo...")
 }
 
-/* Nos informa que se ejecuta el js */
-console.log("Ejecutando js..")
+console.log("Ejecutando js...")
 
-/* Tomamos la informacion del elemento id */
+//-- Leer el párrafo identificado como test
 const test = document.getElementById('test')
 
-/* Cuando se haga click sobre test(id) correra
-la funcion definida */
-test.onclick = manejador_parrafo;
+//-- Configurar el manejador para el evento de
+//-- pulsación de botón: que se ejecute la
+//-- funcion manejador_parrafo()
+test.onclick = manejador_parrafo; /* cuando se haga click
+en test se realizara la funcion parrafo */

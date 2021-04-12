@@ -10,5 +10,5 @@ test2.onclick = () => {
   console.log("Click sobre el párrafo 2...")
 
   //-- Cambiar su texto
-  test1.innerHTML = "¡TEXTO CAMBIADO!"
+  test1.innerHTML = "¡TEXTO CAMBIADO!" /* permite cambiar el texto */
 }

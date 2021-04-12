@@ -1,21 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo 1</title>
-</head>
-<body>
-    <!-- Al pulsar sobre los elementos aparece en la consola
-    los distintos elementos -->
-    <p onclick = "console.log('Pulsado sobre párrafo');">
-    Párrafo. Haz click!
-    </p>
-    <!-- Al pulsar sobre elementos aparece en la consola
-    el mensaje -->
-    <a href="javaScript:console.log('Pulsando sobre enlace');">
-        Haz click sobre mí.
-    </a>
-</body>
-</html>
+<!-- Ejemplo 1: Código javascript empotrado en las
+     etiquetas de HTML -->
+
+     <!DOCTYPE html>
+     <html>
+     <head>
+         <meta charset="UTF-8">
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Ejempo 1</title>
+     </head>
+     <body>
+     
+<!-- Código JS directamente implementado en HTML -->
+
+         <!-- Párrafo. Al pulsar en el texto se ejecuta
+              el código javascript indicado en el atributo onclick -->
+         <p onclick="console.log('Pulsado sobre Párrafo');">
+           Párrafo. ¡Haz click sobre mi!
+         </p> 
+     
+         <!-- Enlace: Al pulsar el enlace se ejecuta el código javascript 
+              indicado en el atributo href -->
+         <a href="javascript:console.log('Pulsado sobre el enlace');">
+              Enlace: Haz click sobre mi!!
+         </a>
+     </body>
+     </html>
