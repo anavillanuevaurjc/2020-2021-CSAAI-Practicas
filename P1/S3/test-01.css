@@ -91,5 +91,9 @@ a:link, a:active, a:visited{ /* estados del link */
 
 
 
-
+ /* standard gradient background */
+ background: linear-gradient(yellow, blue);
+ /* clip informático */
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
 
