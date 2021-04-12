@@ -1,29 +1,21 @@
-/* Creacion de variables */
-/* Aplicacion cuenta clicks */
+//-- Contador de clicks de boton
 
-console.log("Ejecutando js...");
+console.log("Ejecutando JS..."); /* Comprobacion funcionamiento JS */
 
-/* Acceder a los elementos del DOM */
+//-- Acceder a los elementos del DOM
 const display = document.getElementById("display");
-
 const boton = document.getElementById("boton");
-/* uso de const indica que elemento de lectura */
 
-/* contador de clicks */
+//-- Contador de clicks - variable incial a cont 
+let cont = 0;
 
-let cont = 0; /* let indica que variable de escritura y lectura */
-
-/* configurar retrollamada del boton */
-
+//-- Configurar retrollamada del boton
 boton.onclick = () => {
-    console.log("click");
+  console.log("Click!");
 
+  //-- Incrementar contador
+  cont += 1;
 
-/* incrementar contador */
-
-cont += 1;
-
-/* Actualizar dis */
-
-display.innerHTML  = cont; 
+  //-- Actualizar el display
+  display.innerHTML = cont; 
 }

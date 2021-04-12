@@ -1,7 +1,26 @@
+console.log("Ejecutando JS...");
+
+//-- Crear objeto gui, con los elementos de la interfaz gráfica
+//-- Al tenerlo agrupado podemos pasarlo como parámetro o asignárselo
+//-- a otro objeto
+const gui = {
+
+  //-- Elementos gui del contador 1
+  display1: document.getElementById("display1"),
+  boton_inc1: document.getElementById("boton_inc1"),
+  boton_dec1: document.getElementById("boton_dec1"),
+
+  //-- Elementos gui del contador 2
+  display2: document.getElementById("display2"),
+  boton_inc2: document.getElementById("boton_inc2"),
+  boton_dec2: document.getElementById("boton_dec2"),
+}
+
 //-- Clase counter para crear contadores
 //-- Hay que pasarle como parámetro en el constructor  
 //-- el display usado
-class counter { /* definimos la clase y sus propiedades */
+
+class counter {
 
     //-- Constructor del objeto
     //-- Inicializacion de las propiedades
@@ -16,26 +35,13 @@ class counter { /* definimos la clase y sus propiedades */
 
     //-- Método inc para actualizar el contador
     //-- Y mostrarlo en el display
-    inc(value) { /* funcion de la clase */
+    inc(value) {
         this.valor += value;
         this.display.innerHTML = this.valor;
     }
 }
 
-const gui = {
-
-    //-- Elementos gui del contador 1
-    display1: document.getElementById("display1"),
-    boton_inc1: document.getElementById("boton_inc1"),
-    boton_dec1: document.getElementById("boton_dec1"),
-  
-    //-- Elementos gui del contador 2
-    display2: document.getElementById("display2"),
-    boton_inc2: document.getElementById("boton_inc2"),
-    boton_dec2: document.getElementById("boton_dec2"),
-  }
-
-  //-- Crear los dos objetos contadores
+//-- Crear los dos objetos contadores
 const c1 = new counter(gui.display1);
 const c2 = new counter(gui.display2);
 
