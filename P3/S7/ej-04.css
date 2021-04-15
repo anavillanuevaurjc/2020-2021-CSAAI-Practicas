@@ -1,0 +1,11 @@
+/*
+   Clase color. Cambiar el color
+   del fondo
+*/
+.color {
+    background: lightblue;
+  }
+
+/* Creamos selector asociado a la clase color
+ni parrafo ni cuerpo pertenecen color - clases se pueden asignar dinamicamente
+en el JS - */
