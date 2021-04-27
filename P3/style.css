@@ -1,0 +1,16 @@
+body{
+     background-color: wheat;
+     background-image: url(dal.jpg);
+     background-repeat: no-repeat;
+   }
+   canvas {
+
+     background-color: blanchedalmond;
+       background-size: cover;
+       border-radius: 5px;
+       margin-left: auto;
+       margin-right: auto;
+       margin-top: 5%;
+       display: block;
+     }
+ 

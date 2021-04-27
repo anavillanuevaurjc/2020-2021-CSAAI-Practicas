@@ -4,6 +4,8 @@ console.log("Ejecutando JS 5...");
 //Lectura objetos
 const canvas = document.getElementById("canvas");
 const diplayVIDAS = document.getElementById("diplayVIDAS");
+const prueba = document.getElementById("prueba");
+const boton = document.getElementById("boton");
 
 
 //Tamaño canvas 
@@ -17,6 +19,10 @@ const rebote_sound = new Audio('rebote.mp3');
 //Contexto canvas - permite dibujar
 const ctx = canvas.getContext("2d");
 
+//Variable 
+
+vidasiniciales = 3;
+
 //Lectura por teclado 
 window.onkeydown = (e) => {
   
@@ -25,6 +31,7 @@ window.onkeydown = (e) => {
   
       //-- Cambiar la activación de la clase color
       console.log("espacio");
+      prueba.innerHTML = vidasiniciales;
       update();
     }
   }
@@ -45,7 +52,7 @@ window.onkeydown = (e) => {
     //Velocidad rebote bola en raqueta
   var velrebote = 3;
     //Variable inicial del display
-  var vidasini = 3;
+
 
   //Dibujar en el canvas 
   function draw(){
@@ -56,9 +63,9 @@ window.onkeydown = (e) => {
     //funcion usada arc(x,y,radio,angulo inicial,angulo final) 
     ctx.arc(xbola, ybola, 5, 0, 2 * Math.PI); 
 
-    ctx.strokeStyle = 'yellow'; /* líneas  */
+    ctx.strokeStyle = 'black'; /* líneas  */
     ctx.lineWidth = 3; /* anchura lineas */
-    ctx.fillStyle = 'blue'; /* relleno */
+    ctx.fillStyle = 'black'; /* relleno */
 
     //-- Mostrar el trazo del rectángulo
     ctx.stroke();
@@ -68,16 +75,17 @@ window.onkeydown = (e) => {
     ctx.beginPath();
 
     //ctx.rect(x,y, anchura, altura); 
-    ctx.rect(xraqueta,yraqueta, 20, 10);
+    ctx.rect(xraqueta,yraqueta, 30, 6);
 
     //-- Color de relleno del rectángulo
-    ctx.fillStyle = 'green';
+    ctx.strokeStyle = 'black'; /* líneas  */
+    ctx.fillStyle = 'black';
 
     //-- Mostrar el relleno
     ctx.fill();
 
     //-- Mostrar el trazo del rectángulo
-    ctx.stroke();
+
 
     ctx.beginPath();
 
@@ -132,13 +140,13 @@ window.onkeydown = (e) => {
     ctx.rect(198,65, 20, 10);
 
     //-- Color de relleno del rectángulo
-    ctx.fillStyle = 'blue';
+    ctx.fillStyle = 'black';
 
     //-- Mostrar el relleno
     ctx.fill();
 
     //-- Mostrar el trazo del rectángulo
-    ctx.stroke();
+
 
 ctx.closePath();
 
@@ -159,6 +167,24 @@ function update(){
 
       }
     // Fisica
+
+    let vidas = 1;
+    if (ybola >= (canvas.height - 130)) {
+      vidas = vidas - 1;
+      if (vidas > 0){
+        console.log(vidas);
+        velxbola = -velxbola;
+        velybola = -velybola;
+      }else if(vidas < 0){
+        console.log("PARTIDA PERDIDA");
+
+      }else{
+        console.log("NO posible evita infinito")
+      }
+
+    }
+
+
     if(xbola < 0 || xbola >= (canvas.width - 20)) {
         velxbola = -velxbola;
         rebote_sound.currentTime = 0;
@@ -188,33 +214,22 @@ function update(){
     draw();
     //Volver a ejecutar update - aqui podemos pararlo - 130
     if (ybola <= (canvas.height - 130) ){
-        requestAnimationFrame(update);
-    }else{
-        console.log("has perdido vida");
-        vidasini = vidasini - 1;
-        console.log(vidasini);
-        /* diplayVIDAS.innerHTML = vidasini; */ //No funciona
-        if(vidasini > 0){
-            console.log("Sigue jugando");
-            requestAnimationFrame(update);
-        }else{
-            console.log("Has perdido");
-        }
+      requestAnimationFrame(update);
+    }else if (ybola >= (canvas.height - 130) ){
+      boton.onclick = () => {
+        console.log("Click!");
+        update();
+      }
+
+/*         vidas = vidasiniciales - 1;
+        prueba.innerHTML = vidas;  *///funciona, pero no se puede reiniciar
         //Si ocurre esto se reducira una vida y se indicara en el
         //contador - bola a de volver a la posicion inical o no para de moverse hasta
         //que las vidas sean 0
-        window.onkeydown = (e) => {
-  
-            //-- Comprobar si la tecla es un espacio
-            if (e.key == ' ') {
-          
-              //-- Cambiar la activación de la clase color
-              console.log("espacio");
-              update();
-            }
-          }
-
+    }else{
+      console.log("No posible llegar");
     }
     
 }
+
 

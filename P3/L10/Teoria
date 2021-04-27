@@ -1,0 +1,90 @@
+-Definir estructura <- dimensiones + color ¿estructura datos para almacenar?
+-Crear estructura inical 
+-Fundion para dibujar
+-Funcion que recorra estructura y detecte colisiones
+Estructura ladrillos
+Coordenadas x y
+Dimensiones de anchura y altura
+Relleno entre ladrillos 
+Propiedad -> visibles o no -> cuando la bola les da dejan de ser visibles -> visible (Activo) no visible (ignorar)
+
+Constantes organizadas en objeto para usarlas:
+
+const LADRILLO = {
+  F: 2,   //-- Filas
+  C: 3,   //-- Columnas
+  w: 30,  //-- Anchura
+  h: 20,  //-- Altura
+  padding: 10,  //-- Espacio alrededor del ladrillo
+  visible: true //-- Estado del ladrillo: activo o no
+}
+
+Estructura inicial - array bidimensional <- matriz con filas y Columnas
+
+
+//-- Creación de los ladrillos. La estructura se almacena 
+//-- en el objeto ladrillos, que inicialmente está vacío
+const ladrillos = [];
+
+//-- Recorrer todas las filas. La variable i toma valores de 0 hasta F-1 (número de filas)
+//--FILAS
+for (let i = 0; i < F; i++) {
+  ladrillo[i] = [];  //-- Inicializar la fila. Las filas son a su vez Arrays que inicialmente están vacíos
+
+  //-- Recorrer las C columnas de la fila i. La variable j toma valores de 0 hasta C-1 (numero de columnas)
+  // -- COLUMNAS
+  for (let j = 0; j < C; j++) {
+      //-- Calcular valores para el ladrillo de la fila i y la columna j
+    //-- Algunos valores son constates. Otros depeden de i y j
+    ladrillos[i][j] = { //LADRILLO EN FILA I Y COLUMNA J
+      x: (LADRILLO.w + LADRILLO.padding) * j, //--CALCULO COORDENADA X
+      y: (LADRILLO.h + LADRILLO.padding) * i, //--CALCULO COORDENADA Y
+      w: LADRILLO.w, //--CONSTANTE
+      h: LADRILLO.h, //-- CONSTANTE
+      padding: LADRILLO.padding,
+      visible: LADRILLO.visible //--INICIALMENTE SON VISIBLES
+    };
+  }
+}
+
+Dibujarla ->
+
+//-- Dibujar ladrillos
+for (let i = 0; i < LADRILLO.F; i++) { 
+    for (let j = 0; j < LADRILLO.C; j++) {
+
+      //-- Si el ladrillo es visible se pinta
+      if (ladrillos[i][j].visible) { //--Si es visible se dibuja
+        ctx.beginPath();
+        ctx.rect(ladrillos[i][j].x, ladrillos[i][j].y, LADRILLO.w, LADRILLO.h);
+        ctx.fillStyle = 'blue';
+        ctx.fill();
+        ctx.closePath();
+      }
+    }
+}
+
+Deteccion de colisiones ->
+
+//Colocar en la física 
+
+* Recorrer todas las filas y columnas de ladrillos
+  * Si el ladrillo (i,j) es visible:
+    * Si la bola está en contacto con el ladrillo (i,j):
+      * Hacer que el ladrillo (i,j) pase a no visible
+      * Cambiar la velocidad de la bola según el choque (rebote) - rebote de la bola
+    
+for (let i = 0; i < LADRILLO.F; i++) { 
+    for (let j = 0; j < LADRILLO.C; j++) { //--Recorrer todas las filas y columnas de ladrillos
+      if ((ladrillo[i]==ybola)&&(ladrillo[j]== xbola)){
+        ladrillos[i][j].visible = false;
+        velxbola = -velxbola;
+        velybola = -velybola;
+      }
+ 
+      }
+    }
+}
+
+
+
