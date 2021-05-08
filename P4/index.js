@@ -40,9 +40,22 @@ function main() {
   //-- Mostramos la imagen original
 
   original = document.getElementById('botonoriginal');
-    original.onclick = () => {
-        ctx.drawImage(img, 0,0);
+
+  original.onclick = () => {
+
+    deslizadorR.oninput = () => {
+      rgb()
     }
+  
+    deslizadorG.oninput = () => {
+      rgb()
+    }
+  
+    deslizadorB.oninput = () => {
+      rgb()
+    }
+    
+  }
 
   //-- Se establece como tamaño del canvas el mismo
   //-- que el de la imagen original
@@ -60,7 +73,15 @@ function main() {
   ctx.drawImage(img, 0,0);
 
   grey = document.getElementById('botongris');
-  grey.onclick=()=>{
+
+  grey.onclick = () => {
+    pulsargris();
+    console.log('Boton gris')
+  }
+
+  function pulsargris(){
+    ctx.drawImage(img, 0,0);
+
     var imagGrey = ctx.getImageData(0, 0, canvas.width, canvas.height);
     
     //-- Obtener el array con todos los píxeles
@@ -84,6 +105,7 @@ function main() {
   function rgb(){
 
     ctx.drawImage(img, 0,0);
+
     range_valueR.innerHTML = deslizadorR.value;
     range_valueG.innerHTML = deslizadorG.value;
     range_valueB.innerHTML = deslizadorB.value;
@@ -119,15 +141,5 @@ function main() {
 
   //-- Funcion de retrollamada de los deslizadores
 
-  deslizadorR.oninput = () => {
-    rgb()
-  }
-
-  deslizadorG.oninput = () => {
-    rgb()
-  }
-
-  deslizadorB.oninput = () => {
-    rgb()
-  }
 }
+
