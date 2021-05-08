@@ -21,6 +21,22 @@ function main() {
   range_valueG = document.getElementById('range_valueG');
   range_valueB = document.getElementById('range_valueB');
 
+  //-- Canciones
+
+  const song1 = new Audio('Song1.mp3');
+
+  //-- Boton cancion
+
+  botonsong1 = document.getElementById('botonsong1');
+
+  //-- Pulsacion boton 
+
+  botonsong1.onclick = () => {
+    song1.currentTime = 0;
+    song1.play();
+  }
+
+
   //-- Mostramos la imagen original
 
   original = document.getElementById('botonoriginal');

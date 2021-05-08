@@ -1,0 +1,328 @@
+Manipulacion de imagenes
+
+Imagen original 
+Imagen a la que hemos aplicado filtro - filtro de grises + filtro colores (RGB)
+Otras mejoras -> indicar en readme
+
+Manipulacion de imagenes y seguridad
+Al manipular images pueden salir mensajes de precaucion de 
+seguridad
+¿Solucion? Navegador se ha de asegurar que viene de un servidor -
+nos fiamos del servidor - lanzamos servidor web 
+Hemos de ir a la carpeta donde tengamos los ficheros HTML
+Lanzamos servidor web - python3 -m http.server -> se trata
+de servidor que se queda escuchando y tiene acceso -> el Navegador
+se conecta a la url dada y ya es seguro -> Nos hemos de CONECTAR
+al servidor dado
+GitHub es un servidor, por ello, cuando se suba se podra observar sin problemas
+
+Ejemplo 1 - partimos de una imagen que se ha de pintar dentro
+del canvas
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="Ej-01.js" defer></script>
+    <title>Ejemplo 1</title>
+</head>
+<body>
+    <p>Imagen original</p>
+    <img src="logoURJC.png" id="imagesrc">
+    <p>Imagen manipulada</p>
+    <canvas id="canvas"></canvas> //VACIO 
+</body>
+</html>
+
+console.log('Ejecuntando JS...') //PRIMER MENSAJE
+
+//-- Obtener elementos del DOM
+const canvas = document.getElementById('canvas');
+const img = document.getElementById('imagesrc')
+const ctx = canvas.getContext('2d');
+
+//-- Función de retrollamada de imagen cargada
+//-- La imagen no se carga instantaneamente, sino que
+//-- lleva un tiempo. Sólo podemos acceder a ella una vez
+//-- que esté totalmente cargada
+img.onload = function () {
+
+  console.log("Imagen cargada"); //AVISO IMAGEN CARGADA
+
+  //-- Se establece como tamaño del canvas el mismo
+  //-- que el de la imagen original
+  canvas.width = img.width; //CAMBIAMOS DIMENSIONES DEL CANVAS - ponemos el de la imagen
+  canvas.height = img.height; //CAMBIAMOS DIMENSIONES DEL CANVAS - ponemos el de la imagen
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0); //DIBUJAMOS LA IMAGEN
+};
+
+console.log("Fin..."); 
+
+//JS ejecuta de forma asincrona - por ello, sale traza fin antes de cargarse la propia imagen
+
+
+
+
+
+//Ejemplo 2 - Manipular imagen del canvas - Accediendo a los pixeles de la imagen 
+
+//Imagenes formadas por pixeles - al observar con una lupa vemos 3 franjas - RGB 
+//1 byte por cada canal (R G B) -> 3 bytes 
+//Al trabajar con imagenes tenemos 4 canal -> transparencia - opacidad -> permitimos o no
+//que se vea lo que hay detras -> bytes => desde 0 a 255 niveles = 8 bits - por defecto,
+//transparencia esta a 0 = opaco 
+
+console.log("Ejecutando JS....")
+
+//-- Obtener elementos del DOM
+const canvas = document.getElementById('canvas');
+const img = document.getElementById('imagesrc')
+const ctx = canvas.getContext('2d');
+
+//-- Función de retrollamada de imagen cargada
+//-- La imagen no se carga instantaneamente, sino que
+//-- lleva un tiempo. Sólo podemos acceder a ella una vez
+//-- que esté totalmente cargada
+img.onload = function () {
+
+  //-- Se establece como tamaño del canvas el mismo
+  //-- que el de la imagen original
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
+  //-- Obtener la imagen del canvas en pixeles QUE PARTE DE MI CANVAS QUIERO OBTENER 
+  //DEL ARRAY - desde el 0,0 hasta el máximo de anchura y altura 
+
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles PROPIEDAD DATA CONTIENE ARRAYS DE BYTES 
+  //ROJO - 0 VERDE - 1 AZUL - 2 TRANSPARENTE - 3 --> valores crecientes en funcion de 
+  //la posicion - hemos de acceder a posiciones adecuadas para manipular 
+  //TANTOS PIXELES COMO ANCHURA * ALTURA - los pixeles tienen 4 bytes -> 4 *(anchura * altura) = total de bytes
+  //Multiplos de 4 ROJO multiplos 4+1 VERDE multiplos de 4+2 AZUL multiplos de 4+3 transparencia
+
+  let data = imgData.data
+
+  //-- Obtener el numero total de elementos en el array - MOSTRAR DATOS mediante lentgh (indica número de bytes)
+  console.log("Tamaño de data: " + data.length)
+
+  //-- El número total de pixeles es la altura por la anchura CALCULO N. PIXELES 
+  npixels = canvas.width * canvas.height
+  console.log("Anchura (en pixeles): " + canvas.width)
+  console.log("Altura (en pixeles): " + canvas.height)
+  console.log("Pixeles totales: " + npixels)
+
+  //-- Puesto que cada pixel ocupa 4 bytes, el array de píxeles
+  //-- tiene un tamaño de 4 * numero de pixeles
+  console.log("Total de datos de la imagen: " + npixels * 4)
+};
+
+console.log("Fin...");
+
+
+
+
+
+
+
+//Ejemplo 3 - Pintando un pixel rojo 
+//Localizar pixel de una coordenada concreta 
+
+console.log("Ejecutando JS....")
+
+//-- Obtener elementos del DOM
+const canvas = document.getElementById('canvas');
+const img = document.getElementById('imagesrc')
+const ctx = canvas.getContext('2d');
+
+//-- Función de retrollamada de imagen cargada
+//-- La imagen no se carga instantaneamente, sino que
+//-- lleva un tiempo. Sólo podemos acceder a ella una vez
+//-- que esté totalmente cargada
+img.onload = function () {
+
+  //-- Se establece como tamaño del canvas el mismo
+  //-- que el de la imagen original
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data
+
+  //-- data[0] es el canal rojo del pixel de la posición 0,0
+  //-- data[1] es el canal verde del pixel 0,0
+  //-- data[2] es el canal azul del pixel 0,0
+  //-- data[3] es el canal de transparencia del pixel 0,0
+  //-- data[4] es el canal ROJO del pixel 1,0
+  //-- ....
+  //-- En general, para el pixel i
+  //-- data[4*i] es el canal rojo
+  //-- data[4*i + 1]: Canal verde
+  //-- data[4*i + 2]: Canal azul
+  //-- data[4*i + 3]: Canal de transparencia
+
+  //-- Colocar un pixel rojo en (200,50)
+
+  //-- Obtener el numero de pixel a partir de su posicion POSICION N. PIXEL QUE DESEAMOS ACCEDER
+  //            50 * Y <- ya que 50 es a donde queremos llegar 
+  let i = 200 (indica posicion x)+ 50*canvas.width; //PONERLOS TODOS - HACER ARRAY
+
+  //-- Pixel rojo: canal rojo a tope. Resto de colores a 0
+  //-- La transparencia no se modifica
+  data[i*4] = 255;    //-- Canal Rojo
+  data[i*4 + 1] = 0;  //-- Canal Verde
+  data[i*4 + 2] = 0;  //-- Canal azul
+
+  //-- Poner la imagen modificada en el canvas
+  ctx.putImageData(imgData, 0, 0);
+};
+
+console.log("Fin...");
+
+
+
+
+
+
+
+
+//Ejemplo 4 - Eliminar el canal rojo de toda la imagen
+
+
+console.log("Ejecutando JS....")
+
+//-- Obtener elementos del DOM
+const canvas = document.getElementById('canvas');
+const img = document.getElementById('imagesrc')
+const ctx = canvas.getContext('2d');
+
+//-- Función de retrollamada de imagen cargada
+//-- La imagen no se carga instantaneamente, sino que
+//-- lleva un tiempo. Sólo podemos acceder a ella una vez
+//-- que esté totalmente cargada
+img.onload = function () {
+
+  //-- Se establece como tamaño del canvas el mismo
+  //-- que el de la imagen original
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data
+
+  //-- Eliminar el canal Rojo:recorrer el array de datos
+  //-- eliminado el canal rojo y dejando el resto igual que
+  //-- estaba
+  //INDICE EMPIEZE EN CERO QUE SEA MENOR AL TOTAL DE PIXELES QUE TENGO Y LOS INCREMENTO
+  //DE 4 EN 4 
+  for (let i = 0; i < data.length; i+=4) {
+    data[i] = 0; //-- Canal rojo a 0 //NOS QUEDAMOS CON LA POSICION I = 0 ELIMINO LA ROJA
+  }
+
+  //-- Poner la imagen modificada en el canvas
+  ctx.putImageData(imgData, 0, 0);
+
+  console.log("hola....");
+};
+
+console.log("Fin...");
+
+
+
+
+
+
+
+//Ejemplo 5 - Umbral de color rojo - HTML CAMBIA 
+//Filtro de umbral de color - no quitamos toda la componente, sino que de 
+//manera variable puedo determinar la cantidad maxima de rojo en una imagen 
+
+
+
+console.log("Ejecutando JS....")
+
+//-- Obtener elementos del DOM
+const canvas = document.getElementById('canvas');
+const img = document.getElementById('imagesrc');
+const ctx = canvas.getContext('2d');
+
+//-- Acceso al deslizador //DESLIZADOR 
+
+const deslizador = document.getElementById('deslizador');
+
+//-- Valor del deslizador //DESLIZADOR 
+
+const range_value = document.getElementById('range_value');
+
+//-- Función de retrollamada de imagen cargada
+//-- La imagen no se carga instantaneamente, sino que
+//-- lleva un tiempo. Sólo podemos acceder a ella una vez
+//-- que esté totalmente cargada
+img.onload = function () {
+
+  //-- Se establece como tamaño del canvas el mismo
+  //-- que el de la imagen original
+  canvas.width = img.width;
+  canvas.height = img.height;
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
+  console.log("Imagen lista...");
+};
+
+
+//-- Funcion de retrollamada del deslizador
+deslizador.oninput = () => {
+  //-- Mostrar el nuevo valor del deslizador
+  range_value.innerHTML = deslizador.value;
+
+  //-- Situar la imagen original en el canvas
+  //-- No se han hecho manipulaciones todavia
+  ctx.drawImage(img, 0,0);
+
+  //-- Obtener la imagen del canvas en pixeles
+  let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+
+  //-- Obtener el array con todos los píxeles
+  let data = imgData.data
+
+  //-- Obtener el umbral de rojo del desliador
+  umbral = deslizador.value
+
+  //-- Filtrar la imagen según el nuevo umbral
+  for (let i = 0; i < data.length; i+=4) {
+    if (data[i] > umbral)
+      data[i] = umbral;
+  }
+
+  //-- Poner la imagen modificada en el canvas
+  ctx.putImageData(imgData, 0, 0);
+}
+
+console.log("Fin...");
