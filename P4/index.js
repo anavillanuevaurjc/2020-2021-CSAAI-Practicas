@@ -45,6 +45,7 @@ function main() {
   original = document.getElementById('botonoriginal');
 
   original.onclick = () => {
+
     deslizadorR.oninput = () => {
       rgb()
     }
@@ -75,7 +76,6 @@ function main() {
   grey = document.getElementById('botongris');
 
   grey.onclick = () => {
-    deslizadoresON = false;
     pulsargris();
     console.log('Boton gris')
     deslizadorR.oninput = () => {
@@ -111,6 +111,36 @@ function main() {
       }
       ctx.putImageData(imagGrey, 0, 0);
     
+  }
+
+  negativo = document.getElementById('negativo');
+
+  negativo.onclick = () => {
+
+    deslizadorR.oninput = () => {
+      norgb()
+    }
+    deslizadorG.oninput = () => {
+      norgb()
+    }
+    deslizadorB.oninput = () => {
+      norgb()
+    }
+    
+    ctx.drawImage(img, 0,0);
+    let imgData = ctx.getImageData(0,0,canvas.width, canvas.height);
+    let data = imgData.data;
+    for (let i = 0; i < data.length; i+=4) {
+      DER = 255 - data[i];
+      NEERG = 255 - data[i+1];
+      EUBL = 255 - data[i+2];
+  
+      data[i] = DER;
+      data[i+1] = NEERG;
+      data[i+2] = EUBL ;
+    }
+    //--Poner la imagen modificada en el canvas
+    ctx.putImageData(imgData, 0,0);
   }
 
 

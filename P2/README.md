@@ -7,7 +7,7 @@ Operaciones posibles
         Botón con símbolo '+'
     Resta
         Botón con símbolo '-' 
-    Múltiplicación
+    Multiplicación
         Botón con símbolo 'x'
     División
         Botón con símbolo '%'
@@ -22,6 +22,7 @@ Acciones complementaria
         Botón con símbolo '='
 
 Uso
+
     Expresiones válidas
         Dígitos + operando + dígitos
         Solo posible operaciones entre dos dígitos 
