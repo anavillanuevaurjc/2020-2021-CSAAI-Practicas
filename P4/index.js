@@ -1,3 +1,4 @@
+/* Ana Villanueva Ortiz */
 function main() {
   console.log("EJECUTANDO JS....");
 
@@ -11,15 +12,18 @@ function main() {
 
   //-- Deslizadores
 
-  deslizadorR = document.getElementById('deslizadorR');
-  deslizadorG = document.getElementById('deslizadorG');
-  deslizadorB = document.getElementById('deslizadorB');
+  const deslizadorR = document.getElementById('deslizadorR');
+  const deslizadorG = document.getElementById('deslizadorG');
+  const deslizadorB = document.getElementById('deslizadorB');
+  const deslizadores = document.getElementsByClassName('deslizadores');
+  
+  
 
   //-- Valores de deslizadores
 
-  range_valueR = document.getElementById('range_valueR');
-  range_valueG = document.getElementById('range_valueG');
-  range_valueB = document.getElementById('range_valueB');
+  const range_valueR = document.getElementById('range_valueR');
+  const range_valueG = document.getElementById('range_valueG');
+  const range_valueB = document.getElementById('range_valueB');
 
   //-- Canciones
 
@@ -36,21 +40,17 @@ function main() {
     song1.play();
   }
 
-
   //-- Mostramos la imagen original
 
   original = document.getElementById('botonoriginal');
 
   original.onclick = () => {
-
     deslizadorR.oninput = () => {
       rgb()
     }
-  
     deslizadorG.oninput = () => {
       rgb()
     }
-  
     deslizadorB.oninput = () => {
       rgb()
     }
@@ -75,11 +75,22 @@ function main() {
   grey = document.getElementById('botongris');
 
   grey.onclick = () => {
+    deslizadoresON = false;
     pulsargris();
     console.log('Boton gris')
+    deslizadorR.oninput = () => {
+      norgb()
+    }
+    deslizadorG.oninput = () => {
+      norgb()
+    }
+    deslizadorB.oninput = () => {
+      norgb()
+    }
   }
 
   function pulsargris(){
+    
     ctx.drawImage(img, 0,0);
 
     var imagGrey = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -99,6 +110,7 @@ function main() {
         imagGrey.data[i*4+2] = promedio;
       }
       ctx.putImageData(imagGrey, 0, 0);
+    
   }
 
 
@@ -112,17 +124,17 @@ function main() {
 
     //-- Obtener la imagen del canvas en pixeles
 
-    var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
     //-- Obtener el array con todos los píxeles
 
-    var data = imgData.data
+    let data = imgData.data
 
     //-- Obtener los umbrales
 
-    var umbralR = deslizadorR.value
-    var umbralG = deslizadorG.value
-    var umbralB = deslizadorB.value
+    let umbralR = deslizadorR.value
+    let umbralG = deslizadorG.value
+    let umbralB = deslizadorB.value
 
     //-- Filtrar la imagen según los nuevos umbrales
 
@@ -138,8 +150,10 @@ function main() {
 
     ctx.putImageData(imgData, 0, 0);
   }
-
-  //-- Funcion de retrollamada de los deslizadores
-
 }
-
+  //Evita que al usar version gris afecten los deslizadores
+  function norgb(){
+      range_valueR.innerHTML = 255;
+      range_valueG.innerHTML = 255;
+      range_valueB.innerHTML = 255;
+  }
