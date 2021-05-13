@@ -17,12 +17,12 @@ const btn_src_off = document.getElementById("btn_src_off");
 
 
 //-- Establecer las dimensiones de los vídeos
-directo.width=420;
-directo.height=200;
-video1.width=200;  
-video1.height=100;
-video2.width=200;  
-video2.height=100;
+directo.width=620;
+directo.height=400;
+video1.width=300;  
+video1.height=300;
+video2.width=300;  
+video2.height=200;
 
 
 //-- Imagen de Test usada
@@ -64,8 +64,6 @@ btn_src_on.onclick = () => {
 
   //-- Botón de Selección de la cámara 1
   btn_video1.onclick = () => {
-
-
       directo.src = video1.src;
       directo.currentTime = video1.currentTime;
       directo.play();
@@ -93,6 +91,20 @@ btn_src_off.onclick = () => {
     //-- En la emisión en directo ponemos la imagen de prueba
     directo.poster = TEST_IMAGE_URL;
     directo.src = "https://github.com/anavillanuevaurjc/2020-2021-CSAAI-Practicas/blob/main/P5/test.jpg";
+      //-- Botón de Selección de la cámara 1
+    btn_video1.onclick = () => {
+        video1.src = "https://github.com/anavillanuevaurjc/2020-2021-CSAAI-Practicas/blob/main/P5/test.jpg";
+        directo.poster = TEST_IMAGE_URL;
+        directo.src = "https://github.com/anavillanuevaurjc/2020-2021-CSAAI-Practicas/blob/main/P5/test.jpg";
+    };
+
+    //-- Botón de Selección de la cámara 2
+    btn_video2.onclick = () => {
+        video2.src = "https://github.com/anavillanuevaurjc/2020-2021-CSAAI-Practicas/blob/main/P5/test.jpg";
+        directo.poster = TEST_IMAGE_URL;
+        directo.src = "https://github.com/anavillanuevaurjc/2020-2021-CSAAI-Practicas/blob/main/P5/test.jpg";
+
+    };
   };
 
 //-- Botón de Test
