@@ -9,3 +9,8 @@ p{
 #directo{
     background-color: wheat;
 }
+
+button{
+    border: violet;
+    font-size: 80px;
+}

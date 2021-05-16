@@ -19,10 +19,10 @@ const btn_src_off = document.getElementById("btn_src_off");
 //-- Establecer las dimensiones de los vídeos
 directo.width=620;
 directo.height=400;
-video1.width=300;  
-video1.height=300;
-video2.width=300;  
-video2.height=200;
+video1.width=200;  
+video1.height=100;
+video2.width=200;  
+video2.height=100;
 
 
 //-- Imagen de Test usada
