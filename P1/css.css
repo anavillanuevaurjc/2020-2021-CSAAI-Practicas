@@ -1,3 +1,7 @@
+/* En caso de que un elemento no tenga estilo obtendrá el que damos al body -
+color de fondo
+fuente letra
+color letra */
 body{
     background-color: black;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -5,36 +9,51 @@ body{
     border-color: red;
 
 }
+/* A los enunciados de mayor tamaño le damos las siguientes propiedades
+color
+alineación de texto a la izquierda
+fuente letra
+fondo con degradado */
 h1{
     color: black;
     text-align: left;
     font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: linear-gradient(rgb(163, 25, 1), rgb(163, 163, 1));
-    /* clip informático */
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
+/* A la imagen principales le damos las propiedades <- se trata de un id
+borde solido
+cada zona del borde con un color determinado */
 #imagenprincipal{
     border:solid;
     border-top-color: rgb(0, 0, 104);
     border-right-color: rgb(0, 0, 0);
     border-right-width: 650px;
 }
-
+/* A los enunciados del segundo mayor tamaño le damos las siguientes propiedades
+alineamiento de texto
+tamaño de la fuente
+fuente
+fondo degradado */
 h2{
     
     text-align: left;
     font-size: 45px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-     /* standard gradient background */
     background: linear-gradient(rgb(163, 163, 1), rgb(136, 39, 1));
- /* clip informático */
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
+/* A los enunciados con menor tamaño a los dos anteriores le damos las propiedades
+color
+espacio entre letras
+fuente de texto
+decoración del texto - línea por encima
+alineamos el texto en el centro */
 h3{
     color:rgb(255, 255, 255);
     letter-spacing: 1px;
@@ -115,7 +134,12 @@ h4{
     margin-left: 15%;
     margin-right: 15%;
 }
-
+/* A la siguiente clase le damos las propiedades
+color
+alineamiento del texto 
+borde
+color del borde
+estilo del borde  */
 .sobre{
     color:rgb(22, 197, 183);
     text-align: center;
